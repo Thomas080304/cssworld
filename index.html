@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ecloud</title>
+        <title>easted</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link type="text/css" href="src/css/reset.css" rel="stylesheet" media="screen" />
+        <link type="text/css" href="src/css/lib.css" rel="stylesheet" media="screen" />
+        <link type="text/css" href="src/css/color.css" rel="stylesheet" media="screen" />
+        <link type="text/css" href="src/css/animate.css" rel="stylesheet" media="screen" />
+        <link type="text/css" href="src/css/layout.css" rel="stylesheet" media="screen" />
+        <link type="text/css" href="src/css/ui.css" rel="stylesheet" media="screen" />
         <script src="src/js/lib/require.js"></script>
         <script>
             requirejs([
@@ -12,15 +21,25 @@
             });
         </script>
     </head>
-    <body>
-        <div>
-            <ul>
-                <li><a spa href="#/">首页</a></li>
-                <li><a spa href="#/list">列表</a></li>
-                <li><a spa href="#/detail/1">详情</a></li>
-                <li><a spa href="#/about">关于</a></li>
-            </ul>
-            <div id="app"></div>
+    <body style="zoom:1">
+        <header class="header">header</header>
+        <div class="main">
+            <aside class="aside">
+                <i class="aside_bg"></i>
+                <div class="aside_main">
+                    <ul>
+                        <li>test</li>
+                    </ul>
+                </div>
+            </aside>
+            <section>
+                <div class="section-main">
+                    <div class="section-auto">
+                        <h2 class="section_title">使用与发布</h2>
+                        <article></article>
+                    </div>
+                </div>
+            </section>
         </div>
     </body>
 </html>
