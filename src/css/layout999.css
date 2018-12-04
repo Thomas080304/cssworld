@@ -1,0 +1,145 @@
+@charset "UTF-8";
+html {
+  overflow: auto; 
+}
+body {
+    background-color: #fff;
+    min-width: 1263px;
+    overflow: hidden; 
+}
+header {
+    height: 62px;
+    width: 200px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+}
+header:before{
+    content: '';
+    position: absolute;
+    left: 199px;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid #E3E8F1;
+}
+/* main */
+/* 此overflow:hidden不能去除 等高布局所必须
+  * 不能添加任何static之外的position属性
+*/
+.main {
+    overflow: hidden; 
+}
+/* aside */
+/* 需要留下8em也就是默认70像素的padding-bottom值，防止部分情况下，tips形式的导航列表下半部分被隐藏 */
+.main > aside {
+    float: left;
+    padding-top: 62px;
+    padding-bottom: 3999em;
+    margin-bottom: -3991em;
+    border-right: 1px solid #dbdee5;
+    background-color: #fff; 
+}
+.main > aside, .logo, img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}
+/* 页面有滚动条和没有滚动条时候像素级的布局变换处理 */
+@media all and (min-width: 1281px) {
+    .main {
+      margin-right: calc(100% - 100vw); 
+    }
+    body {
+      min-width: calc(1280px - 100vw - 100%); 
+    } 
+}
+.aside_bg {
+    width: 199px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid #dbdee5;
+    background-color: #fff; 
+}
+.main > aside, .aside_bg {
+    width: 199px;
+    -webkit-transition: width .25s;
+    transition: width .25s; 
+}
+.aside_main {
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    white-space: nowrap; 
+}
+/* section */
+.main > section {
+    /*padding-bottom: 1999em; margin-bottom: -1999em;*/
+    min-height: calc(100vh - 62px);
+    overflow: hidden; 
+}
+.section_main {
+    padding: 0 30px; 
+}
+.section_auto {
+    min-width: 1003px;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 60px; 
+}
+.aside_dl{
+    margin: 10px 0;
+}
+.aside_dt{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 22px;
+    color: #9facba;
+}
+.aside_nav{
+    display: block;
+    height: 21px;
+    padding: 8px 20px;
+    color: #4c5161;
+    transition: background-color .25s, color .5s;
+    cursor: pointer;
+    position: relative;
+}
+.aside_nav:hover{
+    color: #4c5161;
+    background-color: #eceef3;
+}
+.aside_dl .active{
+    background-color: #2486ff;
+    color: #fff;
+}
+:root .aside .icon{
+    background: none;
+}
+.aside_dl .active .icon{
+    color: #fff;
+}
+.aside_nav > .icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    vertical-align: -5px;
+    *vertical-align: -1px;
+    text-align: center;
+    line-height: 20px;
+    color: #2486ff;
+}
+.active .icon_nav_msg{
+    background-position: -20px -40px;
+}
+.icon > svg{
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 2px;
+    fill: currentColor;
+}
